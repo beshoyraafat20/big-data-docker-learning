@@ -40,3 +40,9 @@ docker start bigdata-node
 
 # Execute an interactive shell inside the running container
 docker exec -it bigdata-node /bin/bash
+```
+
+## ☕ Phase 2: System Setup & Dependency Installation
+In this phase, you install java 11 and core terminal utilites required by distributed systems.
+
+### 1. Upd
