@@ -25,6 +25,6 @@ docker --version
 ### 2. Run your First interactive Container
 Lanch a fresh Ubuntu 22.04 container:
 ```bash
-docker run -it --name my-ubuntu-test ubuntu-test ubuntu:22.04 /bin/bash
+docker run -it --name bigdata-node ubuntu:22.04 /bin/bash
 ```
 Verification: Your terminal prompt will change to ```root@<container_id>:/#```
