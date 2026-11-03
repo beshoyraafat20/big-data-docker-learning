@@ -19,3 +19,11 @@ In this section, you learn how to interact with Docker containers interactively.
 Verify that Docker is up and running in your environment:
 ```bash
 docker --version
+
+
+### 2. Run your First interactive Container
+Lanch a fresh Ubuntu 22.04 container:
+```bash
+docker run -it --name my-ubuntu-test ubuntu-test ubuntu:22.04 /bin/bash
+```
+Verification: Your terminal prompt will change to ```root@<container_id>:/#```
