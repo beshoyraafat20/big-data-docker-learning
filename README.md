@@ -18,7 +18,8 @@ In this section, you learn how to interact with Docker containers interactively.
 ### 1. Check Docker Installation
 Verify that Docker is up and running in your environment:
 ```bash
-docker --version
+docker --version 
+```
 
 
 ### 2. Run your First interactive Container
