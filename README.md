@@ -28,3 +28,15 @@ Lanch a fresh Ubuntu 22.04 container:
 docker run -it --name bigdata-node ubuntu:22.04 /bin/bash
 ```
 Verification: Your terminal prompt will change to ```root@<container_id>:/#```
+
+### 3. Re-entry & Managemet
+if your container is stopped or you get a container name conflict error, manage it using:
+```bash
+# Force-remove existing container with the same name
+docker rm -f bigdata-node
+
+# Start an existing container
+docker start bigdata-node
+
+# Execute an interactive shell inside the running container
+docker exec -it bigdata-node /bin/bash
