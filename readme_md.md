@@ -86,7 +86,7 @@ source ~/.bashrc
 Hadoop daemons require passwordless SSH access to `localhost`:
 ```bash
 sudo service ssh start
-ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+ssh-keygen -t rsa
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
