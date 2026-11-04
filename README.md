@@ -32,6 +32,18 @@ Verification: Your terminal prompt will change to ```root@<container_id>:/#```
 ### 3. Re-entry & Managemet
 if your container is stopped or you get a container name conflict error, manage it using:
 ```bash
+
+# List all running Docker containers
+#Check which containers are currently active and what services they are running:
+docker ps
+
+# Monitor real-time container resource usage
+docker stats
+
+# Inspect processes inside a specific container
+
+docker top <container_name_or_id>
+
 # Force-remove existing container with the same name
 docker rm -f bigdata-node
 
@@ -45,4 +57,29 @@ docker exec -it bigdata-node /bin/bash
 ## ☕ Phase 2: System Setup & Dependency Installation
 In this phase, you install java 11 and core terminal utilites required by distributed systems.
 
-### 1. Upd
+### 1. Update Package index & install Packages
+inside the container terminal (```root@...:/#```):
+
+```bash
+apt-get update && apt-get install -y openjdk-11-jdk wget tar nano
+```
+
+### 2. Verify java Environment
+
+```bash
+java -version
+```
+verification: Confirm that OpenJDK 11 output is displayed.
+
+## 👤 Phase 3: Dedicated Hadoop User Setup & Permissions
+
+Best practices: run big data daemons under a dedicated user (`hduser`) instead of `root`.
+
+### 1. Create User Group and Hadoop user
+
+```bash
+groupadd hadoop
+useradd -m -g hadoop -s /bin/bash hduser
+passwd hduser
+```
+(Enter and confirm a password for hduser when prompted).
